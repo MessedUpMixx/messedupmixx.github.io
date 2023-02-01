@@ -11,11 +11,11 @@
 
 
 <script>
-function sendReadEvent(title, numberOfCharacters, author) {
+function sendReadEvent(title, timeRead, author) {
     gtag('event', 'read_article', {
         "author": author,
         "title": title,
-        "number_of_characters": numberOfCharacters,
+        "time_read": timeRead,
     });
 }
 
@@ -26,17 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (readArticle1Button) {
         // Skickar event vid klick på artikel 1
         readArticle1Button.addEventListener("click", () => {
-            sendReadEvent("Article 1", 50, "Linus R")
+            sendReadEvent("Article 1", 2, "Linus R")
         });
 
         // Skickar event vid klick på artikel 2
         document.getElementById("read-article-2").addEventListener("click", () => {
-            sendReadEvent("Article 2", 100, "Anna S")
+            sendReadEvent("Article 2", 10, "Anna S")
         });
 
         // Skickar event vid klick på artikel 3
         document.getElementById("read-article-3").addEventListener("click", () => {
-            sendReadEvent("Article 3", 150, "Maria S")
+            sendReadEvent("Article 3", 7, "Maria S")
         });
     }
 
