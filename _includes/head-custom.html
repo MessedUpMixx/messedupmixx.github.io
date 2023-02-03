@@ -9,7 +9,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <script>
-function sendReadingTime(artikelnamn, lastid){
+function sendReadEvent(artikelnamn, lastid){
    gtag('event','last_artikel', {
    "artikelnamn": artikelnamn,
    "lastid": lastid,
@@ -17,25 +17,25 @@ function sendReadingTime(artikelnamn, lastid){
 }
     document.addEventListener("DOMContentLoaded", () => {
        
-        const readTentaArticle1 = document.getElementById("tenta-article-1");
+        const readArticle1Button = document.getElementById("read-article-1");
 
-        if(readTentaArticle1){
+        if(readArticle1Button){
 
-            readTentaArticle1.addEventListener("click", () =>{
-                sendReadingTime("Tenta Article 1", 5)
+            readArticle1Button.addEventListener("click", () =>{
+                sendReadEvent("Article 1", 5)
             });
 
-            document.getElementById("tenta-article-2").addEventListener("click", () => {
-                sendReadingTime("Tenta Article 2", 7)
+            document.getElementById("read-article-2").addEventListener("click", () => {
+                sendReadEvent("Article 2", 7)
             });
 
-            document.getElementById("tenta-article-3").addEventListener("click", () => {
-                sendReadingTime("Tenta Article 3", 15)
+            document.getElementById("read-article-3").addEventListener("click", () => {
+                sendReadEvent("Article 3", 15)
             });
         }
     });
 });
   
- console.log("2023-02-02 1430")
+ console.log("2023-02-03 1430")
 
 </script>
